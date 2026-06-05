@@ -8,7 +8,9 @@ pipeline {
     stages {
         stage('Run App') {
             steps {
-                sh 'mvn compile exec:java'
+                dir('java-app') {
+                    sh 'mvn compile exec:java'
+                }
             }
         }
     }
